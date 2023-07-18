@@ -7,8 +7,14 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   imgParent = '';
+  showImg = true;
+
 
   onLoaded(img: string) {
     console.log('load Father', img)
+  }
+
+  toggleImg() {
+    this.showImg = !this.showImg;
   }
 }
