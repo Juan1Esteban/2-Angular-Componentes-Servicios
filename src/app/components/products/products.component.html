@@ -3,7 +3,12 @@
   <br>
   Total: {{ total }}
 </p>
-
+<p>
+  Today: {{ today | date: 'short' }} <br>
+  Otra Fecha: {{ date | date:'yyyy...dd...MM' }} <br>
+  Otra Fecha2: {{ date | date:'MM/dd/yyyy' }} <br>
+  {{ "Hola sOy Platzi" | uppercase }}
+</p>
 <div class="products--grid">
   <app-product [product]="product" *ngFor="let product of products" (addedProduct)="onAddToShoppingCart($event)" ></app-product>
 </div>

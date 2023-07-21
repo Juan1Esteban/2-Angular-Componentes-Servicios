@@ -5,7 +5,7 @@ import { Product } from '../models/product.model';
 @Injectable({
   providedIn: 'root'
 })
-export class StoreService {
+export class MySingleton {
 
   private myShoppingCart : Product[] = [];
 
