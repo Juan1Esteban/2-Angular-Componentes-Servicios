@@ -18,7 +18,7 @@ export class ProductsComponent implements OnInit {
   products: Product[] = []
 
   today = new Date();
-  date = new Date(2021, 1, 22);
+  date = new Date(2022, 1, 22);
 
 
   constructor(
