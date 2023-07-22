@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { Product } from '../../models/product.model';
 
-import { MySingleton } from '../../services/store.service';
+import { StoreService } from '../../services/store.service';
 import { ProductsService } from '../../services/products.service';
 
 @Component({
@@ -22,10 +22,10 @@ export class ProductsComponent implements OnInit {
 
 
   constructor(
-    private mySingleton: MySingleton,
+    private store: StoreService,
     private productsService: ProductsService
   ) {
-    this.myShoppingCart = this.mySingleton.getShoppingCart();
+    this.myShoppingCart = this.store.getShoppingCart();
    }
 
   ngOnInit(): void {
@@ -36,8 +36,8 @@ export class ProductsComponent implements OnInit {
   }
 
   onAddToShoppingCart(product: Product) {
-    this.mySingleton.addProduct(product);
-    this.total = this.mySingleton.getTotal();
+    this.store.addProduct(product);
+    this.total = this.store.getTotal();
   }
 
 }
