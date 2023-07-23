@@ -10,15 +10,16 @@ import { Component, OnInit, Input, Output, EventEmitter, OnChanges, AfterViewIni
 })
 export class ImgComponent implements OnInit, OnChanges, AfterViewInit, OnDestroy {
 
-  img: string = '';
+  img = '';
 
+  // eslint-disable-next-line @angular-eslint/no-input-rename
   @Input('img')
   set changeImg(newImg: string) {
     this.img = newImg;
     console.log('change just img =>', this.img);
     // code
   }
-  @Input() alt: string = '';
+  @Input() alt = '';
 
   @Output() loaded = new EventEmitter<string>();
 
@@ -49,6 +50,7 @@ export class ImgComponent implements OnInit, OnChanges, AfterViewInit, OnDestroy
     //   this.counter += 1;
     //   console.log('run counter')
     // }, 1000);
+    console.log('ngOnInit')
   }
 
   ngAfterViewInit() {
@@ -71,5 +73,4 @@ export class ImgComponent implements OnInit, OnChanges, AfterViewInit, OnDestroy
     console.log('load Son')
     this.loaded.emit(this.img);
   }
-
 }
